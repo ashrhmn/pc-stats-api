@@ -1,0 +1,19 @@
+{
+    "name": "pc-stats-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:ashrhmn/pc-stats-api.git",
+    "author": "Ashik Rahman <ashrhmn99@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nodemon index.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "osx-temperature-sensor": "^1.0.7",
+        "systeminformation": "^5.8.7"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
+}
