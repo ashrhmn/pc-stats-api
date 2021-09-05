@@ -3,10 +3,10 @@ const si = require('systeminformation')
 
 const app = express()
 
-app.use(require('cors')({
-    origin: '*'
-}))
+app.use(require('cors')({ origin: '*' }))
 
+
+app.use(require('morgan')('dev'))
 
 // si.getStaticData((data) => {
 //     console.log(data.graphics);
