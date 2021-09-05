@@ -15,7 +15,6 @@ app.use(require('morgan')('dev'))
 const routes = [
     si.audio,
     si.baseboard,
-    si.battery,
     si.bios,
     si.blockDevices,
     si.bluetoothDevices,
