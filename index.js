@@ -8,10 +8,6 @@ app.use(require('cors')({ origin: '*' }))
 
 app.use(require('morgan')('dev'))
 
-// si.getStaticData((data) => {
-//     console.log(data.graphics);
-// })
-
 const routes = [
     si.audio,
     si.baseboard,
@@ -67,17 +63,8 @@ const routes = [
 
 ]
 
-// routes.forEach(route => console.log(routes.indexOf(route) + 1, route.name))
-
-// console.log("test :", si);
-
 routes.forEach(route => {
     app.get(`/${route.name}/`, (req, res) => {
-        // route(data => {
-        //     if (data) return res.json(data)
-        //     return res.json({ "Message": "Error" })
-        // })
-
         route()
             .then(data => res.json(data))
             .catch(error => res.json(error))
@@ -91,15 +78,10 @@ app.get('/battery/', (req, res) => {
 })
 
 app.get('/all/', (req, res) => {
-    // si.getAllData(data => {
-    //     if (data) return res.json(data)
-    //     return res.json({ error: "Error occured" })
-    // })
-
     si.getAllData()
         .then(data => res.json(data))
         .catch(error => res.json(error))
 })
 
 
-app.listen(5000)
+app.listen(process.env.PORT || 5000, () => console.log("Server running"))
